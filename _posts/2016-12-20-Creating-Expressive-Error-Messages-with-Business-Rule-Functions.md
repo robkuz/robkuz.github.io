@@ -221,7 +221,7 @@ And then we rewrite `update` one last time (I promise)
 
     let update lens value invoice : invoice =
         set lens value invoice 
-        |>     check' ``gross = net * (1 + vat)``
+        |>  check' ``gross = net * (1 + vat)``
         >>= check' ``vat value and country must match``
         >>= check' ``country must exist``
 
