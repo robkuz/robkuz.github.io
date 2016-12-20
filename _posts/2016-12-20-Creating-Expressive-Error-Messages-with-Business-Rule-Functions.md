@@ -47,11 +47,11 @@ There are some nice things to be Aware of about those biz rules
 A very naive (but straight forward) way to use These Business rules would be like in the following Code
 
     let update lens value invoice : invoice =
-        let updated_inv = set lens value invoice // just ignore this and assume that we get an updated invoice here
-        if not (``gross = net * (1 + vat)`` updated_inv then failwith "'gross = net * (1 + vat)' failed"
-        if not (``vat value and country must match`` updated_inv then failwith "'vat value and country must match' failed"
-        if not (``country must exist`` updated_inv then failwith "'country must exist' failed"
-        updated_inv
+        let u = set lens value invoice // just ignore this and assume that we get an updated invoice here
+        if not (``gross = net * (1 + vat)`` u then failwith "'gross = net * (1 + vat)' failed"
+        if not (``vat value and country must match`` u then failwith "'vat value and country must match' failed"
+        if not (``country must exist`` u then failwith "'country must exist' failed"
+        u
 
 ## Critique
 
