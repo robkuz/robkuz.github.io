@@ -3,7 +3,7 @@ published: true
 ---
 #Creating Expressive Error Messages with Business Rule Functions
 
-## A Journey of Syntax, Code Quotations, Refactorings and Monads
+##A Journey of Syntax, Code Quotations, Refactorings and Monads
 
 F# is pretty relaxed when it comes to naming identifiers. Identfiers can be anything as long as you put those identifiers in double backticks. For example the below is syntaticticly valid code
 
