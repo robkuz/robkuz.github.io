@@ -5,7 +5,7 @@ published: true
 
 F# is pretty relaxed when it comes to naming identifiers. Identfiers can be anything as long as you put those identifiers in double backticks. For example the below is syntaticticly valid code
 
-    let ``Creating Expressive Error Messages for Business Rule Functionsa`` : Blogpost = createBlogpost <| Some "crude ideas"
+    let ``Creating Expressive Error Messages for Business Rule Functions`` : Blogpost = createBlogpost <| Some "crude ideas"
 
 (Sadly its not valid semanticaly - I am still working on that lib to create blog posts for me)
 
@@ -17,7 +17,7 @@ Basically a function that takes any value checks it and then returns if the chec
 
 ## How could that work?
 
-Also let's create a a type and some BusinessRules for it.
+Let's do a show case and create a type and some BusinessRules for it.
 
 ### Types
 
@@ -37,7 +37,7 @@ And the rules might look similar to this
     let ``vat value and country must match`` (inv: Invoice) : bool  = // ... not really interesting
     let ``country must exist`` (inv: Invoice) : bool  = // ... lookup inv.country etc.
 
-There are some nice things to be Aware of about those biz rules
+There are some nice things to be aware of about those biz rules
 
 - The name of the function can contain pretty much any char, operator or keyword we like without getting an syntax error.
 - depending on the business rule the rule name and the rule implementation could be pretty similar
@@ -144,7 +144,7 @@ Now this is getting nice. We are now able to extract the names of the functions 
 
 ### Wrapping the error
 
-Now lets see how we can get rid of errors by throwing exceptions. For this to happen we need to use something like Haskell's Either monad. In F# 4.1 such a type will be included.
+Now lets see how we can get rid of throwing exceptions. For this to happen we need to use something like Haskell's Either monad. In F# 4.1 such a type will be included.
 For now and as an excercise we will build our own
 
     type Result<'TSuccess, 'TError> = 
@@ -167,7 +167,7 @@ Now we rewrite `check` so it returns a `Result` instead of throwing an exception
         if fn v then Success v else Error (sprintf "%A failed" name)
 
 
-and another helper function to execute the business tules join the errors (if any) or return the value
+and another helper function to execute the business rules join the errors (if any) or return the value
 
     let checkRules bizrules v  =
         let hasErrors = isError |> List.filter >> List.isEmpty >> not
