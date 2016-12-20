@@ -3,7 +3,7 @@ published: true
 ---
 #Creating Expressive Error Messages with Business Rule Functions
 
-##A Journey of Syntax, Code Quotations, Refactorings and Monads
+## A Journey of Syntax, Code Quotations, Refactorings and Monads
 
 F# is pretty relaxed when it comes to naming identifiers. Identfiers can be anything as long as you put those identifiers in double backticks. For example the below is syntaticticly valid code
 
@@ -17,7 +17,7 @@ Now wouldn't it be cool if we could create useful error messages for functions t
 
 Basically a function that takes any value checks it and then returns if the check was successful or not.   
 
-##How could that work?
+## How could that work?
 
 Also let's create a a type and some BusinessRules for it.
 
