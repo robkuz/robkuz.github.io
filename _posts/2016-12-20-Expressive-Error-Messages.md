@@ -2,6 +2,7 @@
 published: true
 ---
 #Creating Expressive Error Messages with Business Rule Functions
+
 ## A Journey of Syntax, Code Quotations, Refactorings and Monads
 
 F# is pretty relaxed when it comes to naming identifiers. Identfiers can be anything as long as you put those identifiers in double backticks. For example the below is syntaticticly valid code
@@ -17,6 +18,7 @@ Now wouldn't it be cool if we could create useful error messages for functions t
 Basically a function that takes any value checks it and then returns if the check was successful or not.   
 
 ##How could that work?
+
 Also let's create a a type and some BusinessRules for it.
 
 ### Types
@@ -54,6 +56,7 @@ A very naive (but straight forward) way to use These Business rules would be lik
         updated_inv
 
 ## Critique
+
 Wow this code has quite some issues
 
 1. It is very procedural not a bit of functional
@@ -63,7 +66,9 @@ Wow this code has quite some issues
 5. the error message and the name of the function could diviate over time when the name of the function gets updated
 
 ## Refactor
+
 ### Synchronizing function name and error message
+
 Let's refactor the code above so we get to a code base that doesn't have the issue listed above
 
 First we write a wrapper for executing our business rule function. The easiest approach would be
@@ -118,6 +123,7 @@ And our `update` function can now be easily rewritten
 So we already slashed quite a bit of verbosity - yet its still not very functional.  
 
 ### Functionalize
+
 We can do this by simply reordering the parameters of `check` and the rewriting `update` using pipes and maps
 
     //reordered params v <-> e
@@ -139,6 +145,7 @@ We can do this by simply reordering the parameters of `check` and the rewriting 
 Now this is getting nice. We are now able to extract the names of the functions and use them in our error messages, are code is pretty dense and we moved to a functional design.
 
 ### Wrapping the error
+
 Now lets see how we can get rid of errors by throwing exceptions. For this to happen we need to use something like Haskell's Either monad. In F# 4.1 such a type will be included.
 For now and as an excercise we will build our own
 
@@ -191,6 +198,7 @@ That looks neat and tidy!
 Is that it?
 
 ## And nor for something completely different ... The Larch
+
 Sometimes you might want to use all of that plumbing above but still Exit from the process as soon as you get  first error.  
 How can this be done? First we need to extend the `Result` type
 
