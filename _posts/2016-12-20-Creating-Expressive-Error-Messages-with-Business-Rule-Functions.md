@@ -47,7 +47,7 @@ There are some nice things to be Aware of about those biz rules
 A very naive (but straight forward) way to use These Business rules would be like in the following Code
 
     let update lens value invoice : invoice =
-        let u = set lens value invoice // just ignore this and assume that we get an updated invoice here
+        let u = set lens value invoice // ignore and assume we get an updated invoice here
         if not (``gross = net * (1 + vat)`` u then failwith "'gross = net * (1 + vat)' failed"
         if not (``vat value and country must match`` u then failwith "'vat value and country must match' failed"
         if not (``country must exist`` u then failwith "'country must exist' failed"
@@ -171,7 +171,10 @@ and another helper function to execute the business tules join the errors (if an
 
     let checkRules bizrules v  =
         let hasErrors = isError |> List.filter >> List.isEmpty >> not
-        let joinErrors (xs:Result<'a, 'b> list) = xs |> List.map (extract >> snd) |> List.fold (+) ""
+        let joinErrors (xs:Result<'a, 'b> list) = 
+        	xs 
+            |> List.map (extract >> snd) 
+            |> List.fold (+) ""
 
         let res  = bizrules |> List.map (check v)
         if hasErrors res then
