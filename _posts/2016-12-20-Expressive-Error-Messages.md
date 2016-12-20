@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 #Creating Expressive Error Messages with Business Rule Functions
 ## A Journey of Syntax, Code Quotations, Refactorings and Monads
