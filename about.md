@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Hi Welcome on my blog!
 
-### More Information
+### Managment & Nerd & Contact
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+I am a sweet and weird mixture of management, nerdiness and sales competences.  
+For more info see my  [my homeage](http://www.robkuz.com) where you will also find all contact infos.
