@@ -147,4 +147,5 @@ and every single transition function and every single test you wrote.
 Agreed: F#'s compiler and type inferrence makes most of these changes pretty mechanical but in a way that makes it even more painful. 
 Why not let the compiler do those things it can easily do instead us having to write and maintain tons of copy & pasted code?
 
-Before I explain how to emulate HKT in F# in Part III of this series lets look briefly into Haskell and how they solve this in Part II
+Before I explain how to emulate HKT in F# in Part III of this series lets look briefly into Haskell and how they solve this in [Part II - A Short Visit to Haskell Land](https://github.com/robkuz/robkuz.github.io/blob/master/_posts/2017-01-31-HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land.md).  
+If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homePage](http://www.robkuz.com)
