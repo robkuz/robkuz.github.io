@@ -5,13 +5,17 @@ published: true
 
 F# is pretty relaxed when it comes to naming identifiers. Identfiers can be anything as long as you put those identifiers in double backticks. For example the below is syntaticticly valid code
 
+``` fsharp
     let ``Creating Expressive Error Messages for Business Rule Functions`` : Blogpost = createBlogpost <| Some "crude ideas"
+```
 
 (Sadly its not valid semanticaly - I am still working on that lib to create blog posts for me)
 
 Now wouldn't it be cool if we could create useful error messages for functions that check our business rules? Something that can be expressed by this type:
 
+``` fsharp
     type BusinessRule<'R> = 'R -> bool
+```
 
 Basically a function that takes any value checks it and then returns if the check was successful or not.   
 
@@ -227,26 +231,34 @@ Is that it?
 Sometimes you might want to use all of that plumbing above but still Exit from the process as soon as you get  first error.  
 How can this be done? First we need to extend the `Result` type
 
+``` fsharp
     type Result<'TSuccess, 'TError> with 
         static member Bind (x:Result<'T,_>, f:'T->Result<'U, _>) : Result<'U,_> = 
             match x with 
                 | Success s ->  f s
                 | Error e -> Error e
+```
 
 We create operator for calling that method
 
+``` fsharp
     let (>>=) x f = Result.Bind(x, f)
+```
 
 And once more we reorder parameters. This time using `flip`
 
+``` fsharp
     let check' :  'T -> Result<'T, string> = flip check
+```
 
 And then we rewrite `update` one last time (I promise)
 
+``` fsharp
     let update lens value invoice : invoice =
         set lens value invoice 
         |>  check' ``gross = net * (1 + vat)``
         >>= check' ``vat value and country must match``
         >>= check' ``country must exist``
+```
 
 That's it - really! I hope you enjoyed the show.
