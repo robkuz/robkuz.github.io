@@ -21,7 +21,7 @@ Let's do a show case and create a type and some BusinessRules for it.
 
 ### Types
 
-```fsharp
+``` fsharp
 type Invoice = {
     net: float
     vat: float
@@ -35,7 +35,7 @@ We will pretend that the above is some really neat design ...
 ### Business Rules
 And the rules might look similar to this
 
-```fsharp
+``` fsharp
 let ``gross = net * (1 + vat)`` (inv: Invoice) : bool = inv.gross = inv.net * (1 + inv.vat)
 let ``vat value and country must match`` (inv: Invoice) : bool  = // ... not really interesting
 let ``country must exist`` (inv: Invoice) : bool  = // ... lookup inv.country etc.
@@ -50,7 +50,7 @@ There are some nice things to be aware of about those biz rules
 
 A very naive (but straight forward) way to use These Business rules would be like in the following Code
 
-```fsharp
+``` fsharp
 let update lens value invoice : invoice =
     let u = set lens value invoice // ignore and assume we get an updated invoice here
     if not (``gross = net * (1 + vat)`` u then failwith "'gross = net * (1 + vat)' failed"
@@ -77,7 +77,7 @@ Let's refactor the code above so we get to a code base that doesn't have the iss
 
 First we write a wrapper for executing our business rule function. The easiest approach would be
 
-```fsharp
+``` fsharp
 let check (f: 'a -> bool) v : bool = 
     if not <| f v then failwith (sprintf "%A failed" (f.GetName()))
                                                     //^^^^^^^^^^^^ That's not gonna work
@@ -163,7 +163,7 @@ Now this is getting nice. We are now able to extract the names of the functions 
 Now lets see how we can get rid of throwing exceptions. For this to happen we need to use something like Haskell's Either monad. In F# 4.1 such a type will be included.
 For now and as an excercise we will build our own
 
-```fsharp
+``` fsharp
 type Result<'TSuccess, 'TError> = 
     | Success of 'TSuccess 
     | Error of 'TError
