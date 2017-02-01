@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Higher Kindended Types in F# Part II - A Short Visit To Haskell Land
 tags:
