@@ -192,6 +192,6 @@ You will have to touch every type and therefore also every transition function.
 Its OK if you silently weep now.
 
 I hope I could convince you of the benefits of having higher kinded types in your code and the remaining question is: can we do something similar in F#?
-Follow me to the [third installment of this series - Concept Emulation](https://robkuz.github.io/2017-02-01-HKTS-in-fsharp-part-III-Concept-Emulation) to find out about it.
+Follow me to the [third installment of this series - Concept Emulation](https://robkuz.github.io/HKTS-in-fsharp-part-III-Concept-Emulation/) to find out about it.
 
 If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homepage](http://www.robkuz.com)
