@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Higher Kindended Types in F# Part II - A Short Visit To Haskell Land
 tags:
@@ -7,7 +7,7 @@ tags:
 - Higher Kinded Types
 ---
 
-As you reached this shore I assume you liked [Part I - What is the Problem Anyways?]() of this series.  
+As you reached this shore I assume you liked [Part I - What is the Problem Anyways?](https://robkuz.github.io/Higher-kinded-types-in-fsharp-Intro-Part-I/) of this series.  
 Now we are going to look how the Haskell community will solve our problem. If you have no experience in Haskell, don't worry. 
 The syntax and concepts you will encounter are really easy to grasp.
 
@@ -55,13 +55,13 @@ Lets dive a bit deeper onto that using on of the type above
 ```
 
 A type constructor can be regarded as some (partially applied) function definition - only that this special function does not expect an value as a parameter
-but another type (the kind) in order to create a fully specified type. Another quick example here
+but another type (the kind) in order to create another (fully specified) type. Another quick example here
 
 ``` Haskell
 data Foo a b = Foo a b
 ```
 
-the type constructor above is of kind * -> * -> *
+the type constructor above is of kind `* -> * -> *`
 
 ``` Haskell
 type FooInt = Foo Int
@@ -192,6 +192,6 @@ You will have to touch every type and therefore also every transition function.
 Its OK if you silently weep now.
 
 I hope I could convince you of the benefits of having higher kinded types in your code and the remaining question is: can we do something similar in F#?
-Follow me to the [third installment of this serious] to find out about it.
+Follow me to the [third installment of this series]() to find out about it.
 
 If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homepage](http://www.robkuz.com)
