@@ -185,10 +185,10 @@ x = LineItem {
     }
 ```
 
-and that is it - nothing more. your done. Hasta la vista, baby!
+and that is it - nothing more. your done. Hasta la vista, baby! This is sweet and concise!
 
 In F# however this seemingly trivial change will ripple thru your code like a tsunami. 
-You will have to touch every type and therefore also every transition function. 
+You will have to touch every type and therefore also every transition function.  
 Its OK if you silently weep now.
 
 I hope I could convince you of the benefits of having higher kinded types in your code and the remaining question is: can we do something similar in F#?
