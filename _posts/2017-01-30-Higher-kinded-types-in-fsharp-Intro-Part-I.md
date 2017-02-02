@@ -16,7 +16,7 @@ This series of blogposts will show case what HKT are using one concrete example,
 and how you can use and emulate them in F#
 
 - Part I - What is the Problem Anyways? - That's where you are now
-- [Part II - A Short Visit to Haskell Land](https://github.com/robkuz/robkuz.github.io/blob/master/_posts/2017-01-31-HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land.md)
+- [Part II - A Short Visit to Haskell Land](https://robkuz.github.io/2017-01-31-HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land.md)
 - [Part III - How to emulate HKTs in F#]()
 
 

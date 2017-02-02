@@ -10,7 +10,7 @@ tags:
 I hope you liked the previous parts of this series 
 
 - [Part I - What is the Problem Anyways?](https://robkuz.github.io/Higher-kinded-types-in-fsharp-Intro-Part-I/)
-- [Part II - A Short Visit to Haskell Land](https://github.com/robkuz/robkuz.github.io/blob/master/_posts/2017-01-31-HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land.md)
+- [Part II - A Short Visit to Haskell Land](https://robkuz.github.io/2017-01-31-HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land.md)
 - Part III - Concept Emulator 
 - [Part IV - Roundup and FAQ]() soon to be published
 
@@ -182,6 +182,6 @@ let fli : LineItem<Finished> = toFinished ili
 I'd say that looks good. At least on the call site! 
 I hope you enjoyed the show.
 
-Follow me to the (soon to be published)[4th part of this series for a roundup and FAQ]()
+Follow me to the (soon to be published) [4th part of this series for a roundup and FAQ]()
 
 If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homepage](http://www.robkuz.com)
