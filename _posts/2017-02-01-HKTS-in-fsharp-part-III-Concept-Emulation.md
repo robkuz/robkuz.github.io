@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Higher Kindended Types in F# Part III - Concept Emulator
 tags:
@@ -182,3 +182,5 @@ I'd say that looks good. At least on the call site!
 I hope you enjoyed the show.
 
 Follow me to the (soon to be published)[4th part of this series for a roundup and FAQ]()
+
+If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homepage](http://www.robkuz.com)
