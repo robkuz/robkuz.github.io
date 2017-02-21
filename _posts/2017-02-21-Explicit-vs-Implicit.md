@@ -57,11 +57,13 @@ type FooParam =
 ```
 
 Then we write the function that we want to have a pattern match like the Typescript example
+
 ```fsharp
 let foo (x: FooParam) = 
     match x with
     | BoolParam y -> printfn "Bool: %A" y
     | StrParam z -> printfn "String: %A" z```
+```
 
 On the call site we then create an instance of the newly wrapper DU and feed it into the function.
 
