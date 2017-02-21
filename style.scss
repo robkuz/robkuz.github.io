@@ -132,6 +132,10 @@ img {
   background: $lightGray;
 }
 
+pre code {
+  opacity: 0.9;
+}
+
 // Nicolas Gallagher's micro clearfix hack
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
