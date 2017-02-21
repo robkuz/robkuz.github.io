@@ -253,6 +253,6 @@ So yes explicit is necessary however that should most likely not happen at the c
 
 As you have seen - almost everything is possible already right now. However it takes quite a bit of heavy lifting and greets you with some strange errors sometimes. So please 
 [vote for type classes](https://github.com/fsharp/fslang-suggestions/issues/243) or if you can't at least 
-[vote for erased union types](hhttps://github.com/fsharp/fslang-suggestions/issues/538)
+[vote for erased union types](https://github.com/fsharp/fslang-suggestions/issues/538)
 
 If you have any comments drop me a note on twitter or via email. You'll find the contact info on my [homepage](http://www.robkuz.com)
