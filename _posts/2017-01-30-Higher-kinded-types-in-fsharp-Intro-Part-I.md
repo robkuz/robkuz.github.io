@@ -46,7 +46,7 @@ So you start creating 2 types
 
 ``` fsharp
 type Decision<'a> = Decision of 'a
-type InProgress<'a> = {value: 'a; decisions: Decision}
+type InProgress<'a> = {value: 'a; decisions: Decision<'a>}
 
 type LineItemInProgress = {
     articleID: InProgress<string>
