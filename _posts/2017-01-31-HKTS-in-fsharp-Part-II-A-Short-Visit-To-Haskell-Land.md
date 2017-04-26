@@ -96,7 +96,7 @@ First we define a class (which has nothing to do with OO at all but more of an i
 instance Transition (InProgress a) (Finished a) where
     transit (InProgress {progress = p, decision = d}) = Finished {finished = applyDecision d p, initial = p, ftimestamp = now }
 
-instance Transform (Finished a) (InProgress a) where
+instance Transition (Finished a) (InProgress a) where
     transit (Finished {finished = _, initial = i, ftimestamp = _ } ) = InProgress {progress = i, decision = Decision i}
 ```
 
