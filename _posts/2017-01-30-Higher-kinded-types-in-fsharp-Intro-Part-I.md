@@ -18,7 +18,8 @@ and how you can use and emulate them in F#
 - Part I - What is the Problem Anyways? - That's where you are now
 - [Part II - A Short Visit to Haskell Land](https://robkuz.github.io/HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land)
 - [Part III - How to emulate HKTs in F#](https://robkuz.github.io/HKTS-in-fsharp-part-III-Concept-Emulation)
-
+- [Part IV - Signature Annotations](https://robkuz.github.io/HKTS-in-fsharp-Part-IV-Signature-Annotations)
+- [Part V - Roundup and FAQ]() soon to be published
 
 ## A real life story
 So you have been transferred to this new project - some invoicing stuff! Who needs that? But hey they are using F# (yay!) 

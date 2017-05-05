@@ -12,7 +12,8 @@ I hope you liked the previous parts of this series
 - [Part I - What is the Problem Anyways?](https://robkuz.github.io/Higher-kinded-types-in-fsharp-Intro-Part-I/)
 - [Part II - A Short Visit to Haskell Land](https://robkuz.github.io/HKTS-in-fsharp-Part-II-A-Short-Visit-To-Haskell-Land/)
 - Part III - Concept Emulator 
-- [Part IV - Roundup and FAQ]() soon to be published
+- [Part IV - Signature Annotations](https://robkuz.github.io/HKTS-in-fsharp-Part-IV-Signature-Annotations)
+- [Part V - Roundup and FAQ]() soon to be published
 
 Are you ready to see how you can do those damned Higher Kinded Types in F#?  
 Before we start please be aware that as HKTs are not a native concept to F# our solution is clumsy and far from Haskell's elegance. 
