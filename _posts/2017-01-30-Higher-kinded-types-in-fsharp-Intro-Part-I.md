@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Higher Kindended Types in F# - The Introduction
+title: Higher Kinded Types in F# - The Introduction
 tags:
 - F#
 - Higher Kinded Types
