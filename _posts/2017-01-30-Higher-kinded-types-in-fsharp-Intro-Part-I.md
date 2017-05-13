@@ -87,7 +87,7 @@ PM : We need to move `Finished` line items to `InProgress` back. Our system has 
 so that sometimes the decision that have been made are wrong."
 
 So you open your editor to reuse your already existing code - only there is no reuse (except when you have put "copy & paste" into your mental category of "reuse").  
-As `InProgressLineItem` and `FinishedLineItem` are 2 distinctly types and your function signature is 
+As `LineItemInProgress` and `LineItemFinished` are 2 distinctly types and your function signature is 
 `toFinishedLineItem :: LineItemInProgress -> LineItemFinished` there is no way to invert that signature.  
 So we copy, paste and adjust that code. But hey! It's F#!
 
