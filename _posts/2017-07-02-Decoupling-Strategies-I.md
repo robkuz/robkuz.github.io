@@ -6,7 +6,6 @@ tags:
 - F#
 - Extension Methods, Object Expressions
 ---
-# Decoupling Strategies for F# Code Using Extension Methods and Object Expressions - Part I
 
 On how to implement orthogonal feature sets on generic types
 
