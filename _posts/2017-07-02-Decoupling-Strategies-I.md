@@ -134,19 +134,29 @@ type ItemState<'a when 'a: (member ToJson: unit -> Json)> =
             | _   -> true
 ```
 And tada! Our old friend __could not be generalized because it would escape its scope__ error greets us happily at  
-`static member Extract(s: ItemState<'b>)`.  
+```fsharp
+static member Extract(s: ItemState<'b>)
+```
 And as always we resolve this error by inlining said method so that it reads  
-`static member inline Extract(s: ItemState<'b>)`  
+```fsharp
+static member inline Extract(s: ItemState<'b>)
+```
 Only to see that our old friend has wandered to the next method definition   
-`member this.HasValue()`
+```fsharp
+member this.HasValue()
+```
 
 Now let's inline this method definition as well.  
-`member inline this.HasValue()`  
+```fsharp
+member inline this.HasValue()
+```
 Only - this does not work this time and we get an error telling us:  
-`[FS3151] This member, function or value declaration may not be declared 'inline'`  
+```fsharp
+[FS3151] This member, function or value declaration may not be declared 'inline'
+```
 Bummer!
 
-### A Dead End
+## A Dead End
 So our attempts to adorn everything with SRTPs and inlining has come to an a sudden halt and we need some other aproach.  
 Before we dive into the concrete solution lets review what I have written before: F# does not allow the implementation of an interface within an extension context. Really?  
 
@@ -180,7 +190,7 @@ Well, that looks neat! Be aware thou that `toIcanHazValue` needs to be inlined a
 So how does our extension method that triggered that whole rewrite looks like now?It should be without error, shouldn't it?
 
 ## Errors ? WTF!
-Interstingly enough our initial error on `d.ToJson()` calls is still there. 
+Interestingly enough our initial error on `d.ToJson()` calls is still there. 
 
 ```fsharp
 [FS0072] Lookup on object of indeterminate type based on   
@@ -189,10 +199,10 @@ needed prior to this program point to constrain the type of the
 object. This may allow the lookup to be resolved.
 ```
 Even thou we constrained the generic parameters all the way to the initial type definition. What a let down!  
-May we can fix that by throwing even more SRTPs-Foo onto it.
+We can fix that by throwing even more SRTPs-Foo onto it.
 
 ```fsharp
-//uh,uh - SRTPs in full gear
+//uh,uh - Full-Blown SRTPs-Foo
 let inline toJson (v:^T):Json = (^T: (member ToJson: unit -> Json) v)
 
 type ItemState<'a when 'a: (member ToJson: unit -> Json)> with
@@ -226,11 +236,15 @@ module SomeOtherModule =
     type Foo<'a when 'a: (member ToJson: unit -> Json)> = Foo of  ItemState<'a>
 ```
 And if you happen to have functions with explicit generic parameters like  
+```fsharp
 `let baring<'a>(v: 'a, x:ItemState<'a>) = ...`  
+```
 you need to add the type constraints to those too. So it becomes  
-`let baring<'a when 'a: (member ToJson: unit -> Json)>(v: 'a, x:ItemState<'a>) = ...`
+```fsharp
+let baring<'a when 'a: (member ToJson: unit -> Json)>(v: 'a, x:ItemState<'a>) = ...
+```
 
-And when we have done that for any traces that we find in our code base - then and only then everything will compile fine. Yeah!
+And when we have done that for any traces that we find in our code base - then and only then everything will compile fine. Yeah! Finally!
 
 ## Review
 Let's step back for a moment and review what we have done sofar
@@ -244,6 +258,7 @@ Let's step back for a moment and review what we have done sofar
 - and we needed to remove interface implementations and have them as object expressions (which is good thing by the way)
 
 Wow!  
+
 And that was just ONE orthogonal feature. Just imagine what would happen if you had multiple of those like `Transactionable`, `Memorize`, etc. I am sure that you will find half a dozen such features in any halfway significant program.
 
 We will continue our journey soon to see which other approaches F# offers to us in the [2nd part of this series ]()
