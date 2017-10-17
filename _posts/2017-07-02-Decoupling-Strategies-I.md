@@ -218,8 +218,8 @@ type ItemState<'a when 'a: (member ToJson: unit -> Json)> with
 And indeed now all of it compiles. puuh! All compiles? Really?
 
 ## Of New Types and Aliases
-Yes it does we our program would be as simplistic as that.  
-Bue let's assume that before we started to implement that orthogonal feature of JSON serialization into our code base we had used our type on other types. Something similar to this
+Yes it does if our program would be as simplistic as that.  
+But let's assume that before we started to implement that orthogonal feature of JSON serialization into our code base we had used our type on other types. Something similar to this
 ```fsharp
 module SomeOtherModule =
     open Types
