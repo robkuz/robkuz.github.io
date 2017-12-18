@@ -24,7 +24,7 @@ of dependency management is to simply
 
 ## 1) Inject Dependent Values via Function Parameter
 
-```fsharp
+```
 let someBizFn depValue1 depValue realVal = ...
 ```
 
