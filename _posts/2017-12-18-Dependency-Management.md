@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Dependency Management & Injection (3 + 1 Solutions revisited)
 tags:
@@ -64,7 +64,7 @@ module HighLevelBiz =
     }
 ```
 
-and then there will be a redifined function and a call like this
+and then there will be a redefined function and a call like this
 ```fsharp
 module HighLevelBiz =
     let someHighLevelBizFn (deps:SomeDependencyType) realVal = 
@@ -99,8 +99,8 @@ module HighLevelBiz =
     }
 ```
 
-Ok this works. However only if the types used within `SomeDependencyType` are from the library layer. As soon you it starts to contain types from the
-Business Layers the compiler will start to complain. So that won't work but the temptation will be there. The solution will be then to define seperate *dependency* - types for each function so that
+Ok this works. However only if the types used within `SomeDependencyType` are from the library layer. As soon as theystart to contain types from the Business Layers the compiler will start to complain.  
+So that approach won't work but the temptation will be there none theless. The solution for now is then to define seperate *dependency* - types for each function so that
 
 ```fsharp
 module HighLevelBiz =
@@ -203,12 +203,12 @@ module ProgrammLayer  =
 So now we gained type safety again and with a bit of discipline using a `do` block we can assume (aka fake)
 totallity. But somehow this solutions seems to be pretty heavy weight in it's own. 5 lines of code for each dependency, really? 
 
-Let me give you some heuristics on when to use this solution:
+So obviously that ain't no solution for every day. Let me give you some heuristics on when to use this solution:
 - there are functions with many dependencies (parameters)
 - there are many functions that share the same dependencies but not all of them
-- the functions are distributed across multiple modules
+- (and/or) the functions are distributed across multiple modules
 
-and finaly you have structured your code using (OO) interfaces with generic type parameters like this
+OR you have structured your code using (OO) interfaces with generic type parameters like this
 
 ```fsharp
 type IDocPart<'delta, 'pures> = 
