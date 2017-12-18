@@ -8,7 +8,7 @@ tags:
 - Advent
 ---
 
-# Dependency Management & Injection (3 + 1 Solutions revisited)
+On how to approach dependencies with F#
 
 According to common lore the 3 hardest things in computer science are
 - Naming things and
